@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/acb/Documents/projects/kbatterydoctor-jb/trunk'
+let g:netrw_dirhist_2='/Users/acb/Documents/projects/kbatterydoctor-jb/trunk/kbu'
+let g:netrw_dirhist_3='/Users/acb/快盘/ll'
+let g:netrw_dirhist_4='/Users/acb/Documents/projects/kbatterydoctor-jb/trunk/daemontweak'
+let g:netrw_dirhist_5='/Users/acb/Documents/projects/kbatterydoctor-jb/trunk'
+let g:netrw_dirhist_6='/Users/acb/Documents/projects/kbatterydoctor-jb/trunk/kbd/app'

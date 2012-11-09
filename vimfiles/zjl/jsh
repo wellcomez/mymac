@@ -1,0 +1,28 @@
+#!/usr/bin/expect -f
+set HOSTIP zb 
+# set HOSTIP 127.0.0.1 
+# set HOSTIP 10.33.13.160 
+#[lindex $argv 0]
+set USER root
+#[lindex $argv 1]
+set PASS 123123 
+# set PASS alpine 
+#[lindex $argv 2]
+set PORT 2222 
+# set PORT 22 
+#[lindex $argv 2]
+
+set timeout 1
+set cmd {uname -a}
+
+
+
+send_user "LOGIN:  $HOSTIP \n"
+
+spawn ssh -p $PORT $USER@$HOSTIP
+expect_after eof { exit 0 }
+expect "yes/no" { send "yes\r" }
+expect "password:" { send "$PASS\r" }
+expect "#" {send "cd /\r"}
+interact
+

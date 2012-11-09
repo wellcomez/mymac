@@ -1,0 +1,27 @@
+
+#!/bin/bash
+arg=""
+function ergodic(){
+for file in ` ls $1`
+do
+                if [ -d $1"/"$file ] #如果 file存在且是一个目录则为真
+                then
+                      ergodic $1"/"$file
+                else
+                      local path=$1"/"$file #得到文件的完整的目录
+                      local name=$file       #得到文件的名字
+                      local text=$(strings -t x $path|grep $arg)
+                      local len=${#text}	
+                      if [ $len -ne 0 ]
+                      then 
+                      	echo ====,$file,=====, $text
+                      fi
+                                            #做自己的工作.
+               fi
+
+done
+}
+INIT_PATH=/Users/acb/Documents/projects/jailcode/FrameworkBinary/libraries/System/Library
+arg=$1
+ergodic $INIT_PATH
+grep -n $arg -r $INIT_PATH
